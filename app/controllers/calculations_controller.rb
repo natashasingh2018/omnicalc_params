@@ -45,5 +45,31 @@ def square_root_form_results
   render("calculations/square_root_form_results.html.erb")
 end
 
+def payment_form
+  render("calculations/payment_form.html.erb")
+end
+
+def payment_form_results
+  @rate = params["apr"].to_f
+  @years = params["years"].to_f
+  @principal = params["principal"].to_f
+
+  @monthly_payment = (@principal*@rate/12/100)/ (1 - (1+@rate/12/100)**(-@years*12))
+  render("calculations/payment_form_results.html.erb")
+end
+
+
+def random_form
+  render("calculations/random_form.html.erb")
+end
+
+def random_form_results
+  @min = params["min"].to_f
+  @max= params["max"].to_f
+  @the_number = rand(@min..@max)
+  render("calculations/random_form_results.html.erb")
+end
+
+
 
 end
