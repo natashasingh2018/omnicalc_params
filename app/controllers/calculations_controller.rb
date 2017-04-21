@@ -36,4 +36,14 @@ def square_results
   render("calculations/square_results.html.erb")
 end
 
+def square_root_form
+  render("calculations/square_root_form.html.erb")
+end
+
+def square_root_form_results
+  @the_number = params["user_number"].to_f
+  render("calculations/square_root_form_results.html.erb")
+end
+
+
 end

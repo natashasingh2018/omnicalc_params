@@ -8,9 +8,14 @@ Rails.application.routes.draw do
 
   get("/flexible/random/:min/:max", {:controller => "calculations", :action => "flexible_random" })
 
+  #forms
+
   get("/square/new", {:controller => "calculations", :action => "square_form" })
 
   get("/square/results", {:controller => "calculations", :action => "square_results" })
 
+  get("/square_root/new", {:controller => "calculations", :action => "square_root_form" })
+
+  get("/square_root/results", {:controller => "calculations", :action => "square_root_form_results" })
 
 end
